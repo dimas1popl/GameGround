@@ -18,6 +18,12 @@ GAP = 2
 
 menu = pygame.image.load("menu.png")
 menu_resized = pygame.transform.scale(menu, (100, 50))
+shop_button = pygame.image.load("shop_button.png")
+shop_button_resized = pygame.transform.scale(shop_button, (50, 41))
+shop_background = pygame.image.load("shop_background.png")
+shop_background_resized = pygame.transform.scale(shop_background, (800, 600))
+shop_no = pygame.image.load("no.png")
+shop_no_resized = pygame.transform.scale(shop_no, (70, 70))
 
 serp = pygame.image.load("serp.png")
 serp_resized = pygame.transform.scale(serp, (94, 92))
@@ -149,6 +155,11 @@ while is_on:
 
     if pygame.mouse.get_pressed()[1]:
         grab = 0
+
+    display.blit(shop_button_resized, (680, 25))
+    if check_mouse_area_ground(680, 25, 730, 66) and pygame.mouse.get_pressed()[0]:
+        display.blit(shop_background_resized, (0, 0))
+        display.blit(shop_no_resized, (725, 25))
 
     pygame.display.update()
 
